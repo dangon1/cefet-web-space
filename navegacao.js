@@ -9,6 +9,17 @@ function exibeArtigo(idDoArtigo) {
   artigoParaExibirEl.classList.add('ativa');
 }
 
+document.querySelectorAll('.botao-expandir-retrair').forEach(function(el) {
+   el.addEventListener('click', function(e) {
+		expandiu = el.parentNode.classList.toggle("expandido");
+		if(expandiu)
+			el.innerText = "-";
+		else
+			el.innerText = "+";
+  });
+});
+
+
 // busca e itera sobre todos os itens do menu ("sobre aliens" e
 // "sobre philae") para tratar do evento de clique em cada um
 const itensDoMenu = document.querySelectorAll('#menu-principal a');
